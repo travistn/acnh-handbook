@@ -51,7 +51,7 @@ const VillagerCard = ({ villager }: VillagerCardProps) => {
         </article>
         <article className='bg-beige h-max w-full rounded-md p-4 flex flex-col gap-2'>
           <div className='w-full flex flex-row gap-2'>
-            <p className='w-[50%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
+            <p className='min-w-[32%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
               Hobby
             </p>
             <p className='w-full bg-white text-[15px] font-bold text-very-dark-beige py-1 px-4 rounded-md'>
@@ -59,15 +59,20 @@ const VillagerCard = ({ villager }: VillagerCardProps) => {
             </p>
           </div>
           <div className='w-full flex flex-row gap-2'>
-            <p className='w-[50%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
+            <p className='min-w-[32%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
               Colors
             </p>
-            <p className='w-full bg-white text-[15px] font-bold text-very-dark-beige py-1 px-4 rounded-md'>
-              {villager?.nh_details.fav_colors.map((color, index) => (index ? ', ' : '') + color)}
-            </p>
+            <div className='w-full bg-white text-[15px] font-bold text-very-dark-beige py-1 px-4 rounded-md flex flex-row'>
+              {villager?.nh_details.fav_colors.map((color) => (
+                <div key={color} className='flex flex-row gap-1'>
+                  <div className={`w-[20px] h-[20px] bg-fav-${color.toLowerCase()} rounded-md`} />
+                  <p className='mr-1'>{color}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div className='w-full flex flex-row gap-2'>
-            <p className='w-[50%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
+            <p className='min-w-[32%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
               Styles
             </p>
             <p className='w-full bg-white text-[15px] font-bold text-very-dark-beige py-1 px-4 rounded-md'>
