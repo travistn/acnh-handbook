@@ -17,8 +17,6 @@ type VillagerCardProps = {
 };
 
 const VillagerCard = ({ villager }: VillagerCardProps) => {
-  console.log(villager);
-
   return (
     <article className='w-full h-max bg-dark-teal rounded-md lg:w-[351px]'>
       <header className='flex flex-row items-center gap-2 py-2 px-4'>
