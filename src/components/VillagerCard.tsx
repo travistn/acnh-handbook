@@ -1,16 +1,83 @@
 type VillagerCardProps = {
   villager: {
     name: string;
+    gender: string;
+    personality: string;
+    species: string;
+    birthday_day: string;
+    birthday_month: string;
+    nh_details: {
+      icon_url: string;
+      photo_url: string;
+      hobby: string;
+      fav_colors: string[];
+      fav_styles: string[];
+    };
   };
 };
 
 const VillagerCard = ({ villager }: VillagerCardProps) => {
+  console.log(villager);
+
   return (
-    <article className='w-full h-[400px] bg-dark-teal rounded-md lg:w-[351px]'>
-      <div className='p-4'>
-        <h1 className='text-white text-[20px] font-bold'>{villager?.name}</h1>
-      </div>
-      <div className='bg-cream h-full rounded-bl-md rounded-br-md'></div>
+    <article className='w-full h-max bg-dark-teal rounded-md lg:w-[351px]'>
+      <header className='flex flex-row items-center gap-2 py-2 px-4'>
+        <img
+          src={villager?.nh_details.icon_url}
+          alt={`${villager?.name}-icon`}
+          className='w-[50px] h-[50px]'
+        />
+        <h1 className='text-white text-[18px] font-bold'>{villager?.name}</h1>
+      </header>
+      <article className='bg-cream h-full rounded-bl-md rounded-br-md p-4 flex flex-col gap-4'>
+        <article className='bg-beige h-max w-full rounded-md p-4 flex flex-row items-center gap-4'>
+          <img
+            src={villager?.nh_details.photo_url}
+            alt={`${villager?.name}-pic`}
+            className='w-[200px] h-[150px] rounded-md overflow-hidden'
+          />
+          <div className='w-full flex flex-col gap-2'>
+            <p className='bg-white py-1 px-4 rounded-md font-bold text-very-dark-beige text-[15px]'>
+              {villager?.gender}
+            </p>
+            <p className='bg-white py-1 px-4 rounded-md font-bold text-very-dark-beige text-[15px]'>
+              {villager?.personality}
+            </p>
+            <p className='bg-white py-1 px-4 rounded-md font-bold text-very-dark-beige text-[15px]'>
+              {villager?.species}
+            </p>
+            <p className='bg-white py-1 px-4 rounded-md font-bold text-very-dark-beige text-[15px]'>
+              {`${villager?.birthday_month} ${villager?.birthday_day}`}
+            </p>
+          </div>
+        </article>
+        <article className='bg-beige h-max w-full rounded-md p-4 flex flex-col gap-2'>
+          <div className='w-full flex flex-row gap-2'>
+            <p className='w-[50%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
+              Hobby
+            </p>
+            <p className='w-full bg-white text-[15px] font-bold text-very-dark-beige py-1 px-4 rounded-md'>
+              {villager?.nh_details.hobby}
+            </p>
+          </div>
+          <div className='w-full flex flex-row gap-2'>
+            <p className='w-[50%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
+              Colors
+            </p>
+            <p className='w-full bg-white text-[15px] font-bold text-very-dark-beige py-1 px-4 rounded-md'>
+              {villager?.nh_details.fav_colors.map((color, index) => (index ? ', ' : '') + color)}
+            </p>
+          </div>
+          <div className='w-full flex flex-row gap-2'>
+            <p className='w-[50%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
+              Styles
+            </p>
+            <p className='w-full bg-white text-[15px] font-bold text-very-dark-beige py-1 px-4 rounded-md'>
+              {villager?.nh_details.fav_styles.map((style, index) => (index ? ', ' : '') + style)}
+            </p>
+          </div>
+        </article>
+      </article>
     </article>
   );
 };
