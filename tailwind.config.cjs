@@ -11,6 +11,7 @@ module.exports = {
         cream: '#FAF1E3',
         beige: '#E8E0C3',
         'dark-beige': '#B8AC8A',
+        'very-dark-beige': '#524e34',
       },
     },
   },
