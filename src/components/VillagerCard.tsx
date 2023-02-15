@@ -4,7 +4,7 @@ type VillagerCardProps = {
     gender: string;
     personality: string;
     species: string;
-    birthday_day: string;
+    birthday_day: number;
     birthday_month: string;
     nh_details: {
       icon_url: string;
@@ -17,8 +17,10 @@ type VillagerCardProps = {
 };
 
 const VillagerCard = ({ villager }: VillagerCardProps) => {
+  if (villager.nh_details === null) return null;
+
   return (
-    <article className='w-full h-max bg-dark-teal rounded-md lg:w-[351px]'>
+    <article className='w-full h-max bg-dark-teal rounded-md lg:w-[380px]'>
       <header className='flex flex-row items-center gap-2 py-2 px-4'>
         <img
           src={villager?.nh_details.icon_url}
