@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import VillagerCard from '../components/VillagerCard';
@@ -27,7 +27,13 @@ const Villagers = () => {
         ))}
       </article>
       <article className='pb-4'>
-        <PaginatedItems items={data} itemsPerPage={9} setItems={setVillagers} />
+        <PaginatedItems
+          items={data?.filter(
+            (villager: { nh_details: {} | null }) => villager.nh_details !== null
+          )}
+          itemsPerPage={9}
+          setItems={setVillagers}
+        />
       </article>
     </main>
   );
