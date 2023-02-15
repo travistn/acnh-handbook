@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 type VillagerCardProps = {
   villager: {
     name: string;
@@ -17,6 +19,8 @@ type VillagerCardProps = {
 };
 
 const VillagerCard = ({ villager }: VillagerCardProps) => {
+  const navigate = useNavigate();
+
   if (villager.nh_details === null) return null;
 
   return (
@@ -25,16 +29,22 @@ const VillagerCard = ({ villager }: VillagerCardProps) => {
         <img
           src={villager?.nh_details.icon_url}
           alt={`${villager?.name}-icon`}
-          className='w-[50px] h-[50px]'
+          className='w-[50px] h-[50px] hover:cursor-pointer hover:opacity-[.85]'
+          onClick={() => navigate(`/villagers/${villager.name}`)}
         />
-        <h1 className='text-white text-[18px] font-bold'>{villager?.name}</h1>
+        <h1
+          className='text-white text-[18px] font-bold hover:underline hover:underline-offset-4 hover:cursor-pointer'
+          onClick={() => navigate(`/villagers/${villager.name}`)}>
+          {villager?.name}
+        </h1>
       </header>
       <article className='bg-cream h-full rounded-bl-md rounded-br-md p-4 flex flex-col gap-4'>
         <article className='bg-beige h-max w-full rounded-md p-4 flex flex-row items-center gap-4'>
           <img
             src={villager?.nh_details.photo_url}
             alt={`${villager?.name}-pic`}
-            className='w-[200px] h-[150px] rounded-md overflow-hidden'
+            className='w-[200px] h-[150px] rounded-md overflow-hidden hover:cursor-pointer hover:opacity-80'
+            onClick={() => navigate(`/villagers/${villager.name}`)}
           />
           <div className='w-full flex flex-col gap-2'>
             <p className='bg-white py-1 px-4 rounded-md font-bold text-very-dark-beige text-[15px]'>
