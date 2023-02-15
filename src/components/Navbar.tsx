@@ -31,13 +31,15 @@ const Navbar = () => {
             ACNH Handbook
           </h1>
         </header>
-        <ul className='hidden lg:flex flex-row gap-4 ml-10 items-center'>
+        <ul className='hidden lg:flex flex-row gap-4 ml-10 items-start'>
           {links.map((link) => (
             <Link
-              to={link}
+              to={`${link}/page/1`}
               key={link}
               className={`text-white capitalize text-[18px] ${
-                location?.pathname.slice(1) === link ? 'border-b-[1px] border-teal' : ''
+                location.pathname.slice(1, location.pathname.indexOf('/page/')) === link
+                  ? 'border-b-[2px] border-teal'
+                  : ''
               }`}>
               {link.split('-').join(' ')}
             </Link>
