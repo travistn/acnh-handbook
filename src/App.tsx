@@ -11,6 +11,7 @@ import Bug from './pages/Bug';
 import Fishes from './pages/Fishes';
 import Fish from './pages/Fish';
 import SeaCreatures from './pages/SeaCreatures';
+import SeaCreature from './pages/SeaCreature';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/fish/page/:page' element={<Fishes />} />
         <Route path='/fish/:fishName' element={<Fish />} />
         <Route path='/sea-creatures/page/:page' element={<SeaCreatures />} />
+        <Route path='/sea-creatures/:seaCreatureName' element={<SeaCreature />} />
       </Routes>
       <Footer />
     </>
