@@ -53,7 +53,7 @@ const Navbar = () => {
         <section className='w-full bg-very-dark-teal pl-5 pt-2 pb-3 border-t-[1px] border-white/[.2]'>
           <ul className='flex flex-col gap-2'>
             {links.map((link) => (
-              <Link to={link} key={link} className='text-white capitalize'>
+              <Link to={`${link}/page/1`} key={link} className='text-white capitalize'>
                 {link.split('-').join(' ')}
               </Link>
             ))}
