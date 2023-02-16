@@ -62,7 +62,7 @@ const FishCard = ({ fish }: FishCardProps) => {
           </div>
           <div className='w-full flex flex-row gap-2 items-center'>
             <p className='min-w-[32%] text-[15px] font-bold text-white bg-dark-beige py-1 px-4 rounded-md text-center'>
-              South
+              Southern
             </p>
             <p className='w-full bg-white text-[15px] font-bold text-very-dark-beige py-1 px-4 rounded-md'>
               {fish?.south.months}
