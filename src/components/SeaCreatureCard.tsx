@@ -28,13 +28,13 @@ const SeaCreatureCard = ({ seaCreature }: SeaCreatureCardProps) => {
           alt={`${seaCreature?.name}-icon`}
           className='w-[50px] h-[50px] hover:cursor-pointer hover:opacity-[.85]'
           onClick={() =>
-            navigate(`/sea-creature/${seaCreature?.name.split(' ').join('-').toLowerCase()}`)
+            navigate(`/sea-creatures/${seaCreature?.name.split(' ').join('-').toLowerCase()}`)
           }
         />
         <h1
           className='capitalize text-white font-bold text-[18px] hover:underline hover:underline-offset-4 hover:cursor-pointer'
           onClick={() =>
-            navigate(`/sea-creature/${seaCreature?.name.split(' ').join('-').toLowerCase()}`)
+            navigate(`/sea-creatures/${seaCreature?.name.split(' ').join('-').toLowerCase()}`)
           }>
           {seaCreature?.name}
         </h1>
