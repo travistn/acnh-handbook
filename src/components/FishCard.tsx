@@ -26,11 +26,11 @@ const FishCard = ({ fish }: FishCardProps) => {
           src={fish?.image_url}
           alt={`${fish?.name}-icon`}
           className='w-[50px] h-[50px] hover:cursor-pointer hover:opacity-[.85]'
-          onClick={() => navigate(`/bugs/${fish?.name.split(' ').join('-').toLowerCase()}`)}
+          onClick={() => navigate(`/fish/${fish?.name.split(' ').join('-').toLowerCase()}`)}
         />
         <h1
           className='capitalize text-white font-bold text-[18px] hover:underline hover:underline-offset-4 hover:cursor-pointer'
-          onClick={() => navigate(`/bugs/${fish?.name.split(' ').join('-').toLowerCase()}`)}>
+          onClick={() => navigate(`/fish/${fish?.name.split(' ').join('-').toLowerCase()}`)}>
           {fish?.name}
         </h1>
       </header>
