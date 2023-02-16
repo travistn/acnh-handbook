@@ -8,7 +8,7 @@ const Bug = () => {
   const { bugName } = useParams();
 
   const { data, isLoading } = useQuery({
-    queryKey: ['villager'],
+    queryKey: ['bug'],
     queryFn: () =>
       fetch(
         `https://api.nookipedia.com/nh/bugs/${bugName?.split('-').join(' ')}?api_key=${

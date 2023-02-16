@@ -8,7 +8,7 @@ import PaginatedItems from '../components/PaginatedItems';
 const Fishes = () => {
   const [fish, setFish] = useState<[]>();
   const { data, isLoading } = useQuery({
-    queryKey: ['bugs'],
+    queryKey: ['fishes'],
     queryFn: () =>
       fetch(`https://api.nookipedia.com/nh/fish?api_key=${import.meta.env.VITE_API_KEY}`).then(
         (res) => res.json()
