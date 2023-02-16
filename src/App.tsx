@@ -9,6 +9,7 @@ import Villager from './pages/Villager';
 import Bugs from './pages/Bugs';
 import Bug from './pages/Bug';
 import Fishes from './pages/Fishes';
+import Fish from './pages/Fish';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/bugs/page/:page' element={<Bugs />} />
         <Route path='/bugs/:bugName' element={<Bug />} />
         <Route path='/fish/page/:page' element={<Fishes />} />
+        <Route path='/fish/:fishName' element={<Fish />} />
       </Routes>
       <Footer />
     </>
