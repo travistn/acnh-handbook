@@ -45,7 +45,12 @@ const SongCard = ({ song }: SongCardProps) => {
             }`}
             onClick={() => setIsPlaying(!isPlaying)}
           />
-          <audio hidden ref={audioRef} src={song?.music_uri} />
+          <audio
+            hidden
+            onEnded={() => setIsPlaying(!isPlaying)}
+            ref={audioRef}
+            src={song?.music_uri}
+          />
         </article>
         <article className='bg-beige h-max w-full p-4 rounded-md flex flex-col gap-3'>
           <div className='w-full flex flex-row gap-2 items-center'>
