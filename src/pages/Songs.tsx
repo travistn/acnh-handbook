@@ -9,7 +9,7 @@ const Songs = () => {
   const [songs, setSongs] = useState<any[]>();
   const { data, isLoading } = useQuery({
     queryKey: ['songs'],
-    queryFn: () => fetch(`http://acnhapi.com/v1/songs`).then((res) => res.json()),
+    queryFn: () => fetch(`https://acnhapi.com/v1/songs`).then((res) => res.json()),
   });
 
   if (isLoading) return <Loading isLoading={isLoading} />;
