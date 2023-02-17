@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import music_note from '../assets/music-note.png';
 import bells from '../assets/bells.png';
 
 type SongCardProps = {
   song: {
+    id: number;
     image_uri: string;
     music_uri: string;
     name: {
@@ -18,6 +20,7 @@ type SongCardProps = {
 const SongCard = ({ song }: SongCardProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<any>();
+  const navigate = useNavigate();
 
   useEffect(() => {
     isPlaying ? audioRef.current.play() : audioRef.current.pause();
@@ -30,8 +33,11 @@ const SongCard = ({ song }: SongCardProps) => {
           src={music_note}
           alt='music-note-icon'
           className='w-[40px] h-[40px] hover:cursor-pointer hover:opacity-[.85] mb-1'
+          onClick={() => navigate(`/songs/${song?.id}`)}
         />
-        <h1 className='capitalize text-white font-bold text-[18px] hover:underline hover:underline-offset-4 hover:cursor-pointer'>
+        <h1
+          className='capitalize text-white font-bold text-[18px] hover:underline hover:underline-offset-4 hover:cursor-pointer'
+          onClick={() => navigate(`/songs/${song?.id}`)}>
           {song?.name['name-USen']}
         </h1>
       </header>
