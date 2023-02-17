@@ -3,7 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
 type PaginatedItemsProps = {
-  items: [];
+  items: any[];
   itemsPerPage: number;
   setItems: any;
 };
