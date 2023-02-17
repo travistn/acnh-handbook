@@ -13,6 +13,7 @@ import Fish from './pages/Fish';
 import SeaCreatures from './pages/SeaCreatures';
 import SeaCreature from './pages/SeaCreature';
 import Songs from './pages/Songs';
+import Song from './pages/Song';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path='/sea-creatures/page/:page' element={<SeaCreatures />} />
         <Route path='/sea-creatures/:seaCreatureName' element={<SeaCreature />} />
         <Route path='/songs/page/:page' element={<Songs />} />
+        <Route path='/songs/:songId' element={<Song />} />
       </Routes>
       <Footer />
     </>
